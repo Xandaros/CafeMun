@@ -175,6 +175,8 @@ public class InputThread extends Thread
 		{
 			e.printStackTrace();
 		}
+		mainThread.running = false;
+		mainThread.interrupt();
 	}
 	
 	private enum ReadMode

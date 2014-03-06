@@ -15,8 +15,6 @@ public class CafeMun
 	
 	public static void sendRaw(String message)
 	{
-		System.out.println("\nsending: " + message);
-		System.out.println();
 		try
 		{
 			message += "\r\n";

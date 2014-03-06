@@ -19,6 +19,7 @@ import org.luaj.vm2.lib.jse.JsePlatform;
 public class MainThread extends Thread
 {
 	public BlockingQueue<Message>	inputQueue		= new LinkedBlockingQueue<Message>();
+	public boolean running = true;
 	
 	private InputStream				in;
 	private Globals					globals			= JsePlatform.standardGlobals();
@@ -104,7 +105,7 @@ public class MainThread extends Thread
 			}
 			catch (InterruptedException e)
 			{
-				e.printStackTrace();
+				if (!running) return;
 			}
 		}
 	}
