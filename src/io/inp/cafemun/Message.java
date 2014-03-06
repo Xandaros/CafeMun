@@ -1,7 +1,6 @@
 package io.inp.cafemun;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Message
@@ -21,8 +20,7 @@ public class Message
 		this.host = host;
 		this.command = command;
 		
-		this.params = new ArrayList<String>(params.size());
-		Collections.copy(this.params, params);
+		this.params = new ArrayList<String>(params);
 		
 		this.trailing = trailing;
 	}

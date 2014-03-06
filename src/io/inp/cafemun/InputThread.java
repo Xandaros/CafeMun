@@ -21,14 +21,15 @@ public class InputThread extends Thread
 	private byte[] debugBuffer = new byte[4096];
 	private int debugPtr = 0;
 
-	public InputThread(InputStream in)
+	public InputThread(MainThread mainThread, InputStream in)
 	{
+		this.mainThread = mainThread;
 		this.in = in;
 	}
 	
 	private void handleInput() throws UnsupportedEncodingException
 	{
-		mainThread.addInput(new Message(nick, user, host, command, params, trailing));
+		mainThread.inputQueue.add(new Message(nick, user, host, command, params, trailing));
 		
 		nick = null;
 		user = null;
