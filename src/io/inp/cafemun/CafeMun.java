@@ -39,7 +39,7 @@ public class CafeMun
 			sendRaw("NICK CafeMun");
 			sendRaw("USER CafeMun 0 * :Cafe Mun");
 			
-			MainThread mainThread = new MainThread(in, out);
+			MainThread mainThread = new MainThread(in);
 			mainThread.start();
 		}
 		catch (IOException e)
